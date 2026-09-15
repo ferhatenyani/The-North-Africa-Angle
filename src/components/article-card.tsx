@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { images, type ImageSlot } from "@/lib/images";
+import { imageSrcSet, images, type ImageSlot } from "@/lib/images";
 import { IconArrowRight } from "./icons";
 
 type Props = {
@@ -15,10 +15,12 @@ type Props = {
   image?: ImageSlot;
   /** Compact image-beside-text row, used in mobile snap rows. */
   layout?: "stacked" | "horizontal";
+  /** Browser hint for picking the right srcset candidate. */
+  sizes?: string;
 };
 
 /** Article card — thumbnail + kicker + headline, hairline border, flat. */
-export function ArticleCard({ href, kicker, title, dek, meta, image, layout = "stacked" }: Props) {
+export function ArticleCard({ href, kicker, title, dek, meta, image, layout = "stacked", sizes = "(max-width: 767px) 92vw, 400px" }: Props) {
   const [failed, setFailed] = useState(false);
   const src = image ? images[image] : undefined;
   const showImage = image && !failed && src;
@@ -29,6 +31,8 @@ export function ArticleCard({ href, kicker, title, dek, meta, image, layout = "s
         {showImage ? (
           <img
             src={src}
+            srcSet={imageSrcSet(image)}
+            sizes="160px"
             alt=""
             onError={() => setFailed(true)}
             loading="lazy"
@@ -51,15 +55,17 @@ export function ArticleCard({ href, kicker, title, dek, meta, image, layout = "s
       href={href}
       className="group flex flex-col border border-hairline bg-white transition-colors hover:border-ink"
     >
-      {showImage ? (
-        <img
-          src={src}
-          alt=""
-          onError={() => setFailed(true)}
-          loading="lazy"
-          className="aspect-[16/9] w-full object-cover"
-        />
-      ) : null}
+        {showImage ? (
+          <img
+            src={src}
+            srcSet={imageSrcSet(image)}
+            sizes={sizes}
+            alt=""
+            onError={() => setFailed(true)}
+            loading="lazy"
+            className="aspect-[16/9] w-full object-cover"
+          />
+        ) : null}
       <div className="flex flex-1 flex-col p-6">
         <p className="kicker text-cobalt">{kicker}</p>
         <h3 className="mt-3 font-display text-xl font-semibold leading-snug tracking-tight text-ink">

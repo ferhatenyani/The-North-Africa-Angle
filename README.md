@@ -21,17 +21,20 @@ Copy `.env.example` to `.env.local` and fill in:
 
 ## Images
 
-All photos live in `public/images/` and are wired through `src/lib/images.ts`.
-**To replace an image: drop a new file with the same name — no code change needed.**
+All photos live in `public/images/` as **WebP** (a 1600w full version plus an 800w variant served
+to phones via `srcset`), wired through `src/lib/images.ts`.
+**To replace an image: drop a new `.webp` file with the same name — no code change needed.**
 If a file is missing, `PlaceImage` renders a flat placeholder labelled with the expected filename.
 
 | Slot | Where it appears | Current photo |
 |---|---|---|
-| `hero.jpg` | Home hero | Camel caravan, Grand Erg |
-| `expertise-hero.jpg` | Expertise hero | Chefchaouen |
-| `country-dz.jpg` / `country-ma.jpg` / `country-tn.jpg` / `country-ly.jpg` / `country-mr.jpg` | Home regional cards + Expertise country grid | Notre-Dame d'Afrique / Hassan II Mosque / El Jem / Sabratha / Chinguetti manuscripts |
-| `about-1.jpg` | About page band | Marrakech lantern souk |
-| `article-gas.jpg` / `article-water.jpg` / `article-sahel.jpg` | Insight cards + article headers | Noor III solar tower / Lac Bab Louta / desert caravan |
+| `hero.webp` | Home hero | Camel caravan, Grand Erg |
+| `expertise-hero.webp` | Expertise hero | Chefchaouen |
+| `country-dz.webp` / `country-ma.webp` / `country-tn.webp` / `country-ly.webp` / `country-mr.webp` | Home regional cards + Expertise country grid | Notre-Dame d'Afrique / Hassan II Mosque / El Jem / Sabratha / Chinguetti manuscripts |
+| `about-1.webp` | About page band | Marrakech lantern souk |
+| `article-gas.webp` / `article-water.webp` / `article-sahel.webp` | Insight cards + article headers | Noor III solar tower / Lac Bab Louta / desert caravan |
+
+If you only have a JPG, convert it: `python -c "from PIL import Image; Image.open('in.jpg').convert('RGB').save('out.webp','WEBP',quality=82)"`.
 
 Licenses and authors: see `ATTRIBUTION.md`. All current photos are freely licensed
 (Wikimedia Commons) — replaceable by the client's own photography at any time.
@@ -68,6 +71,8 @@ including `sitemap.xml` and `robots.txt`.
 - Bottom action bar ("Work with us" + WhatsApp) on phones; WhatsApp FAB floats above it.
 - Services, country cards and article cards become swipeable snap carousels under `lg`.
 - Hero images break out full-bleed on phones; header shows the short "NAA" mark.
+- The landing page ends with an email contact form + direct WhatsApp button
+  (same components as the Contact page, sharing the Web3Forms key).
 
 ## Pending from the client (see PLAN.md §7)
 

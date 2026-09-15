@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { images, type ImageSlot } from "@/lib/images";
+import { imageSrcSet, images, type ImageSlot } from "@/lib/images";
 
 type Props = {
   slot: ImageSlot;
@@ -11,14 +11,17 @@ type Props = {
   ratio?: string;
   className?: string;
   eager?: boolean;
+  /** Browser hint for picking the right srcset candidate. */
+  sizes?: string;
 };
 
 /**
  * Image with graceful fallback: if the file is missing or fails to load,
  * renders a flat placeholder labelled with the filename to drop in.
  * Plain <img> on purpose — no build-time dependency on the files existing.
+ * Serves the 800w WebP variant on small screens via srcset.
  */
-export function PlaceImage({ slot, alt, ratio = "3 / 2", className = "", eager }: Props) {
+export function PlaceImage({ slot, alt, ratio = "3 / 2", className = "", eager, sizes = "(max-width: 768px) 100vw, 50vw" }: Props) {
   const [failed, setFailed] = useState(false);
   const src = images[slot];
 
@@ -29,7 +32,7 @@ export function PlaceImage({ slot, alt, ratio = "3 / 2", className = "", eager }
         style={{ aspectRatio: ratio }}
         aria-hidden
       >
-        <span className="kicker text-ink-muted/40">{slot}.jpg</span>
+        <span className="kicker text-ink-muted/40">{slot}.webp</span>
       </div>
     );
   }
@@ -37,6 +40,8 @@ export function PlaceImage({ slot, alt, ratio = "3 / 2", className = "", eager }
   return (
     <img
       src={src}
+      srcSet={imageSrcSet(slot)}
+      sizes={sizes}
       alt={alt}
       onError={() => setFailed(true)}
       loading={eager ? "eager" : "lazy"}

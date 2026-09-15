@@ -1,21 +1,28 @@
 import Link from "next/link";
 
 import { ArticleCard } from "@/components/article-card";
+import { ContactForm } from "@/components/contact-form";
 import { CountryMap } from "@/components/country-map";
 import { CtaBand } from "@/components/cta-band";
-import { IconArrowRight } from "@/components/icons";
+import { IconArrowRight, IconWhatsApp } from "@/components/icons";
 import { PlaceImage } from "@/components/place-image";
 import { formatDate, sortedArticles } from "@/lib/articles";
 import { articleImages } from "@/lib/images";
 import { getDict, type Locale } from "@/lib/i18n";
-import { site } from "@/lib/site";
+import { site, waLink } from "@/lib/site";
 
 const COUNTRY_SLOTS = ["country-dz", "country-ma", "country-tn", "country-ly", "country-mr"] as const;
+
+const HOME_WA_MESSAGE: Record<Locale, string> = {
+  en: "Hello, I'd like to discuss a project on North Africa.",
+  fr: "Bonjour, je souhaite discuter d'un projet sur l'Afrique du Nord.",
+};
 
 export default async function HomePage({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
   const t = getDict(lang);
   const latest = sortedArticles().slice(0, 3);
+  const homeWa = waLink(HOME_WA_MESSAGE[lang]);
 
   return (
     <>
@@ -189,7 +196,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
         </div>
       </section>
 
-      {/* Weekly update */}
+      {/* Weekly update — subscriptions happen on Substack (external) */}
       <CtaBand
         variant="cobalt"
         kicker={t.home.weekly.kicker}
@@ -271,6 +278,36 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
           <p className="text-center font-mono text-xs uppercase tracking-[0.2em] text-ink-muted">
             {t.home.closing.tagline}
           </p>
+        </div>
+      </section>
+
+      {/* Contact — email form + WhatsApp, right before the footer.
+          Mobile-first: context, WhatsApp, then the form. */}
+      <section className="border-t border-hairline bg-surface">
+        <div className="container-page grid gap-10 py-14 sm:py-16 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div>
+            <p className="kicker text-cobalt">{t.contact.hero.kicker}</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight tracking-tight text-ink">
+              {t.contact.hero.title}
+            </h2>
+            <p className="mt-4 font-serif text-xl leading-snug text-ink">{t.contact.hero.lead}</p>
+            {site.whatsapp ? (
+              <a
+                href={waLink(
+                  lang === "fr"
+                    ? "Bonjour, je souhaite discuter d'un projet sur l'Afrique du Nord."
+                    : "Hello, I'd like to discuss a project on North Africa.",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2.5 bg-whatsapp px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-whatsapp-dark"
+              >
+                <IconWhatsApp width="18" height="18" />
+                {t.cta.chatOnWhatsApp}
+              </a>
+            ) : null}
+          </div>
+          <ContactForm t={t.forms} waHref={homeWa} />
         </div>
       </section>
     </>
