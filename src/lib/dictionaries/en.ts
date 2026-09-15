@@ -1,0 +1,372 @@
+export const en = {
+  meta: {
+    title: "The North Africa Angle",
+    description:
+      "Political, policy and market intelligence on North Africa. Research. Intelligence. Local expertise.",
+  },
+  nav: {
+    home: "Home",
+    about: "About",
+    services: "Services",
+    expertise: "Expertise",
+    insights: "Insights",
+    contact: "Contact",
+  },
+  cta: {
+    ourServices: "Our services",
+    exploreInsights: "Explore our insights",
+    workWithUs: "Work with us",
+    discussProject: "Discuss a project",
+    contactUs: "Contact us",
+    getInTouch: "Get in touch",
+    readOnSubstack: "Read on Substack",
+    subscribe: "Subscribe to our newsletter",
+    chatOnWhatsApp: "Chat on WhatsApp",
+    skipToContent: "Skip to content",
+    backHome: "Back to home",
+  },
+  home: {
+    hero: {
+      kicker: "Political · Policy · Market Intelligence",
+      title: "Political, policy and market intelligence on North Africa",
+      body: "The North Africa Angle helps organisations understand the political, economic and social dynamics shaping North Africa — and what they mean for policy, investment, partnerships and decision-making.",
+    },
+    intro: {
+      kicker: "Our reading of the region",
+      title: "Understanding North Africa beyond the headlines",
+      paras: [
+        "North Africa is changing rapidly.",
+        "Political developments, economic transformation, migration, energy, regional geopolitics, digitalisation and shifting international partnerships are reshaping the region and its relationship with Europe, Africa and the wider world.",
+        "Understanding these developments requires more than following the headlines. It requires local knowledge, political context and an ability to connect developments that are often considered separately.",
+        "The North Africa Angle provides research and intelligence to help organisations understand what is happening, why it matters and what may come next.",
+      ],
+    },
+    services: {
+      kicker: "What we do",
+      title: "Six lines of service, one question: yours",
+    },
+    regions: {
+      kicker: "Our regional focus",
+      title: "Algeria and the wider Maghreb",
+      body: "Our work is centred on Algeria and the wider Maghreb, with expertise and networks extending across the region.",
+      countries: ["Algeria", "Morocco", "Tunisia", "Libya", "Mauritania"],
+      note: "We combine regional analysis with country-level expertise, working with researchers, analysts and subject-matter experts across North Africa.",
+      linkLabel: "See our expertise",
+    },
+    closing: {
+      kicker: "From insight to understanding",
+      title: "Built around the question that needs to be answered",
+      body: "Whether you need a political briefing, stakeholder mapping, field research in Algeria, a market-entry assessment or a broader regional study, we build our approach around the question that needs to be answered.",
+      tagline: "Clear analysis. Local knowledge. Useful intelligence.",
+    },
+    weekly: {
+      kicker: "Weekly Update",
+      title: "The North Africa Angle Weekly Update",
+      body: "A concise overview of the week's most significant political, economic and security developments across North Africa and the wider region.",
+    },
+  },
+  about: {
+    hero: {
+      kicker: "About",
+      title: "About The North Africa Angle",
+      lead: "Seeing North Africa from more than one angle",
+      paras: [
+        "The North Africa Angle is an independent research and advisory platform focused on North Africa.",
+        "We work at the intersection of research, political intelligence and local expertise, helping international organisations, businesses, research institutions and media better understand the region.",
+        "North Africa is often analysed from a distance or through a narrow set of political and economic indicators. Yet many of the developments shaping the region are rooted in local political dynamics, institutional cultures, social change, historical relationships and networks that are harder to capture from the outside.",
+        "NAA seeks to bridge that gap.",
+      ],
+    },
+    approach: {
+      kicker: "Our approach",
+      title: "How we work",
+      items: [
+        {
+          title: "Regional knowledge",
+          desc: "We follow the political, economic and social dynamics shaping North Africa and place current developments within their wider regional and international context.",
+        },
+        {
+          title: "Local expertise",
+          desc: "We work with researchers and specialists who bring country-level knowledge, professional experience and, where required, on-the-ground access.",
+        },
+        {
+          title: "Independent research",
+          desc: "We aim to distinguish between facts, emerging trends and informed analysis, while remaining attentive to the complexity of the region.",
+        },
+        {
+          title: "Practical intelligence",
+          desc: "Our work is designed to be useful to people who need to make decisions, develop programmes, assess risks, conduct research or better understand a rapidly changing environment.",
+        },
+      ],
+    },
+    why: {
+      kicker: "Why “The North Africa Angle”?",
+      title: "Because perspective matters.",
+      paras: [
+        "The same development can look very different depending on where you stand.",
+        "The North Africa Angle brings local and regional perspectives into the analysis, helping organisations see developments from angles that may otherwise be missed.",
+        "Our work combines the depth of research with the practical needs of organisations operating in or engaging with North Africa.",
+      ],
+    },
+  },
+  services: {
+    hero: {
+      kicker: "Services",
+      title: "Research, intelligence and advisory services on North Africa",
+      body: "The North Africa Angle provides tailored research and intelligence for organisations working on, in or with North Africa.",
+    },
+    items: [
+      {
+        title: "Political & Policy Intelligence",
+        intro: "We monitor and analyse political and policy developments across North Africa.",
+        bullets: [
+          "Political monitoring",
+          "Country briefings",
+          "Policy analysis",
+          "Political risk assessment",
+          "Executive briefings",
+          "Political and institutional mapping",
+          "Monitoring of emerging developments",
+        ],
+        for: "For consulting firms, businesses, international organisations, NGOs, media and research institutions.",
+      },
+      {
+        title: "Research & Analysis",
+        intro:
+          "We conduct qualitative and desk-based research on political, economic and social issues affecting the region.",
+        bullets: [
+          "Desk research",
+          "Field research",
+          "Interviews",
+          "Stakeholder consultations",
+          "Policy briefs",
+          "Thematic reports",
+          "Political economy analysis",
+          "Comparative country research",
+        ],
+        for: null,
+      },
+      {
+        title: "Stakeholder Intelligence",
+        intro:
+          "Knowing who matters is often as important as knowing what is happening. We map relevant stakeholders and institutions, examining their roles, interests, relationships and potential influence.",
+        bullets: [
+          "Government institutions",
+          "Public agencies",
+          "Businesses",
+          "Civil society organisations",
+          "International organisations",
+          "Experts and academics",
+          "Industry associations",
+          "Political and social actors",
+        ],
+        for: null,
+      },
+      {
+        title: "Market & Political Entry",
+        intro:
+          "Entering a new market requires more than commercial research. We help organisations understand the political, regulatory and institutional environment surrounding their activities.",
+        bullets: [
+          "Country and sector overviews",
+          "Political and regulatory analysis",
+          "Market intelligence",
+          "Stakeholder mapping",
+          "Risk identification",
+          "Local research",
+          "Executive briefings",
+          "Market-entry support",
+        ],
+        for: null,
+      },
+      {
+        title: "Local Research & Expertise",
+        intro:
+          "For international organisations conducting research in North Africa, NAA can act as a local research and knowledge partner. We can support:",
+        bullets: [
+          "Interviews",
+          "Focus groups",
+          "Field research",
+          "Local stakeholder identification",
+          "Translation and contextualisation",
+          "Research coordination",
+          "Local expert engagement",
+          "Country-level analysis",
+        ],
+        for: null,
+      },
+      {
+        title: "Information & Media Intelligence",
+        intro:
+          "North Africa's information environments are changing rapidly. We research:",
+        bullets: [
+          "Media landscapes",
+          "Information ecosystems",
+          "Information integrity",
+          "Digital public spheres",
+          "Online narratives",
+          "Media and political communication",
+          "Digital and social media trends",
+        ],
+        for: null,
+      },
+    ],
+    tailored: {
+      kicker: "Tailored assignments",
+      title: "Not every research question fits a predefined service.",
+      body: "If you have a question about North Africa, we can build the appropriate research approach and expertise around your needs. Tell us what you are trying to understand.",
+    },
+  },
+  expertise: {
+    hero: {
+      kicker: "Expertise",
+      title: "Regional knowledge. Thematic depth. Local perspectives.",
+      body: "Our work combines regional understanding with specialised expertise across the political, economic and social issues shaping North Africa.",
+    },
+    regional: {
+      kicker: "Regional expertise",
+      title: "Country-level knowledge",
+      countries: [
+        { name: "Algeria", themes: ["Political affairs", "Governance", "Economy", "Energy", "Migration", "Society", "Media", "Culture"] },
+        { name: "Morocco", themes: ["Political affairs", "Economy", "Foreign policy", "Energy", "Society", "Business"] },
+        { name: "Tunisia", themes: ["Political affairs", "Governance", "Economy", "Civil society", "Migration", "Media"] },
+        { name: "Libya", themes: ["Political affairs", "Security", "Governance", "Economy", "Energy", "Regional dynamics"] },
+        { name: "Mauritania", themes: ["Politics", "Security", "Economy", "Migration", "Sahel dynamics"] },
+      ],
+    },
+    thematic: {
+      kicker: "Thematic expertise",
+      title: "Domains we cover",
+      items: [
+        { title: "Politics & Governance", desc: "Political systems, institutions, elections, governance and political change." },
+        { title: "Political Economy", desc: "Economic policy, business environments, reforms, investment and political-economic dynamics." },
+        { title: "Migration & Mobility", desc: "Migration governance, mobility, border policies and regional migration dynamics." },
+        { title: "Energy & Climate", desc: "Energy policy, energy transition, renewables, climate policy and resource geopolitics." },
+        { title: "Media & Information", desc: "Media ecosystems, information integrity, digital affairs and political communication." },
+        { title: "Human Rights & Civil Society", desc: "Civil society, civic space, human rights and social movements." },
+        { title: "Culture & Society", desc: "Culture, identity, heritage, cultural policy and social change." },
+        { title: "Research & Fieldwork", desc: "Qualitative research, interviews, stakeholder consultations, field research and country-level studies." },
+      ],
+    },
+    network: {
+      kicker: "Our network",
+      title: "A network built around each assignment",
+      paras: [
+        "North Africa requires different perspectives and different forms of expertise.",
+        "Depending on the needs of a project, NAA can draw on a network of researchers, analysts and subject-matter specialists with country-level and thematic expertise across the region.",
+        "This allows us to build the right combination of regional knowledge and specialised expertise for each assignment.",
+      ],
+    },
+  },
+  insights: {
+    hero: {
+      kicker: "Insights",
+      title: "Analysis and perspectives on North Africa",
+      body: "The North Africa Angle publishes independent analysis and perspectives on the political, economic and social developments shaping North Africa. Our coverage looks beyond individual events to explore the broader trends, actors and dynamics behind them.",
+    },
+    coverage: {
+      kicker: "Areas of coverage",
+      title: "What we follow",
+      items: [
+        { title: "Politics & Governance", desc: "Political change, institutions, elections and governance." },
+        { title: "Regional Geopolitics", desc: "North Africa's regional relationships and its evolving position between Europe, Africa and the wider international system." },
+        { title: "Political Economy", desc: "Economic transformation, investment, business environments and the relationship between politics and economics." },
+        { title: "Migration & Mobility", desc: "Migration policies, mobility, borders and regional migration dynamics." },
+        { title: "Energy & Climate", desc: "Energy geopolitics, transition, renewables and climate-related developments." },
+        { title: "Media & Information", desc: "Media environments, information integrity, digitalisation and public debate." },
+        { title: "Society & Culture", desc: "Social change, identity, culture and the issues shaping North African societies." },
+      ],
+    },
+    weekly: {
+      kicker: "Weekly Update",
+      title: "The North Africa Angle Weekly Update",
+      body: "A concise overview of the week's most significant political, economic and security developments across North Africa and the wider region.",
+    },
+    featured: {
+      kicker: "Featured analysis",
+      title: "Latest research and commentary",
+    },
+  },
+  contact: {
+    hero: {
+      kicker: "Contact",
+      title: "Let's talk about North Africa",
+      lead: "Tell us what you are working on and what you need to understand.",
+      body: "Whether you are looking for political intelligence, field research, stakeholder mapping, local expertise or a research partner in North Africa, we would be interested in hearing from you.",
+    },
+    project: {
+      kicker: "Project enquiries",
+      title: "Tell us briefly about:",
+      items: [
+        "Your organisation",
+        "The question you are trying to answer",
+        "The countries or themes involved",
+        "The type of support you are looking for",
+        "Your expected timeframe",
+      ],
+      note: "We will get back to you to discuss whether NAA can help.",
+    },
+    experts: {
+      kicker: "Expert enquiries",
+      title: "Are you a specialist on North Africa?",
+      body: "Are you a researcher, analyst or subject-matter specialist with strong knowledge of North Africa? We are building a network of experts who can contribute to research assignments and short-term projects on an as-needed basis.",
+    },
+    direct: {
+      kicker: "Direct",
+      emailLabel: "Email",
+      whatsappLabel: "WhatsApp",
+      substackLabel: "Substack",
+    },
+  },
+  forms: {
+    title: "Send us a message",
+    name: "Full name",
+    email: "Email",
+    organisation: "Organisation",
+    countries: "Countries or themes involved",
+    support: "Type of support",
+    supportPlaceholder: "Select a type of support",
+    supportOptions: [
+      "Political & Policy Intelligence",
+      "Research & Analysis",
+      "Stakeholder Intelligence",
+      "Market & Political Entry",
+      "Local Research & Expertise",
+      "Information & Media Intelligence",
+      "Other / not sure yet",
+    ],
+    timeframe: "Expected timeframe",
+    message: "Your project",
+    messagePlaceholder: "The question you are trying to answer, the context, what you need…",
+    optional: "optional",
+    requiredMark: "*",
+    send: "Send enquiry",
+    sending: "Sending…",
+    sentTitle: "Enquiry sent",
+    sentBody: "Thank you — we will get back to you shortly. For an immediate response, message us directly on WhatsApp.",
+    sendAnother: "Send another enquiry",
+    errorForm: "Something went wrong. Please try again in a moment.",
+    errorConfig: "The contact form is not configured yet. Please reach us by email or WhatsApp instead.",
+    responseNote: "We reply within one business day — usually faster.",
+  },
+  article: {
+    analysis: "Analysis",
+    backToInsights: "All insights",
+    minRead: "min read",
+    publishedOn: "Published",
+  },
+  footer: {
+    blurb: "Independent research, political intelligence and local expertise on North Africa.",
+    explore: "Explore",
+    coverage: "Coverage",
+    contact: "Contact",
+    follow: "Follow",
+    pendingSocial: "Profile coming soon",
+    rights: "All rights reserved.",
+  },
+  notFound: {
+    title: "Page not found",
+    body: "The page you are looking for does not exist or has been moved.",
+  },
+};
+
+export type Dict = typeof en;

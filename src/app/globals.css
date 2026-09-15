@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  /* Flat palette — no gradients anywhere (see PLAN.md no-slop rules). */
+  --color-background: #ffffff;
+  --color-surface: #f4f6f8;
+  --color-ink: #0e1b2c;
+  --color-ink-muted: #4a5a6e;
+  --color-cobalt: #1d4ed8;
+  --color-cobalt-dark: #1e40af;
+  --color-hairline: #d9e0e8;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+  --color-danger: #dc2626;
+
+  --font-display: var(--font-archivo), "Archivo", sans-serif;
+  --font-body: var(--font-plex-sans), "IBM Plex Sans", sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", monospace;
+  --font-serif: var(--font-source-serif), "Source Serif 4", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-body text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-cobalt text-white;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+}
+
+/* Kicker: mono eyebrow label — plain text, never a pill. */
+@utility kicker {
+  @apply font-mono text-xs font-medium tracking-[0.18em] uppercase;
+}
+
+/* Hairline-separated section heading block. */
+@utility section-rule {
+  @apply border-t border-hairline pt-8;
+}
+
+/* Mobile-first horizontal snap row: swipeable cards on touch,
+   becomes a normal grid child (no overflow) where `lg:snap-row-off` resets it. */
+@layer components {
+  .snap-row {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-padding-left: 1.25rem;
+  }
+  .snap-row > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  .snap-row::-webkit-scrollbar {
+    display: none;
+  }
+}
