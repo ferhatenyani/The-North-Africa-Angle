@@ -307,12 +307,6 @@ export const fr: Dict = {
       title: "Vous êtes spécialiste de l'Afrique du Nord ?",
       body: "Vous êtes chercheur, analyste ou spécialiste avec une bonne connaissance de l'Afrique du Nord ? Nous construisons un réseau d'experts pouvant contribuer à des missions de recherche et à des projets de courte durée, selon les besoins.",
     },
-    direct: {
-      kicker: "En direct",
-      emailLabel: "E-mail",
-      whatsappLabel: "WhatsApp",
-      substackLabel: "Substack",
-    },
   },
   forms: {
     title: "Envoyez-nous un message",

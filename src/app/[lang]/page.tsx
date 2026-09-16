@@ -18,6 +18,11 @@ const HOME_WA_MESSAGE: Record<Locale, string> = {
   fr: "Bonjour, je souhaite discuter d'un projet sur l'Afrique du Nord.",
 };
 
+const EXPERT_WA_MESSAGE: Record<Locale, string> = {
+  en: "Hello, I am a researcher / analyst specialised in North Africa and interested in joining the NAA expert network.",
+  fr: "Bonjour, je suis chercheur / analyste spécialiste de l'Afrique du Nord et je souhaite rejoindre le réseau d'experts de NAA.",
+};
+
 export default async function HomePage({ params }: { params: Promise<{ lang: Locale }> }) {
   const { lang } = await params;
   const t = getDict(lang);
@@ -271,7 +276,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
         kicker={t.home.closing.kicker}
         title={t.home.closing.title}
         body={t.home.closing.body}
-        primary={{ href: `/${lang}/contact`, label: t.cta.workWithUs }}
+        primary={{ href: `/${lang}#contact`, label: t.cta.workWithUs }}
       />
       <section className="bg-surface">
         <div className="container-page py-10">
@@ -282,8 +287,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
       </section>
 
       {/* Contact — email form + WhatsApp, right before the footer.
-          Mobile-first: context, WhatsApp, then the form. */}
-      <section className="border-t border-hairline bg-surface">
+          Target of every "Contact" / "Work with us" CTA site-wide (/#contact).
+          Mobile-first: context, what to tell us, WhatsApp, expert network, then the form. */}
+      <section id="contact" className="scroll-mt-16 border-t border-hairline bg-surface">
         <div className="container-page grid gap-10 py-14 sm:py-16 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <div>
             <p className="kicker text-cobalt">{t.contact.hero.kicker}</p>
@@ -306,6 +312,46 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
                 {t.cta.chatOnWhatsApp}
               </a>
             ) : null}
+
+            {/* Project enquiries — mirrors the form fields */}
+            <div className="mt-10">
+              <p className="kicker text-cobalt">{t.contact.project.kicker}</p>
+              <h3 className="mt-2 font-display text-xl font-semibold tracking-tight text-ink">
+                {t.contact.project.title}
+              </h3>
+              <ol className="mt-4 border-t border-hairline">
+                {t.contact.project.items.map((item, i) => (
+                  <li
+                    key={item}
+                    className="flex items-baseline gap-4 border-b border-hairline py-2.5 text-sm text-ink"
+                  >
+                    <span className="font-mono text-xs text-cobalt">{String(i + 1).padStart(2, "0")}</span>
+                    {item}
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t.contact.project.note}</p>
+            </div>
+
+            {/* Expert enquiries */}
+            <div className="mt-10 border-t-2 border-ink pt-8">
+              <p className="kicker text-cobalt">{t.contact.experts.kicker}</p>
+              <h3 className="mt-2 font-display text-xl font-semibold tracking-tight text-ink">
+                {t.contact.experts.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t.contact.experts.body}</p>
+              {site.whatsapp ? (
+                <a
+                  href={waLink(EXPERT_WA_MESSAGE[lang])}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+                >
+                  <IconWhatsApp width="18" height="18" className="text-whatsapp" />
+                  {t.cta.getInTouch}
+                </a>
+              ) : null}
+            </div>
           </div>
           <ContactForm t={t.forms} waHref={homeWa} />
         </div>

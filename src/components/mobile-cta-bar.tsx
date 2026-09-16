@@ -18,7 +18,7 @@ export function MobileCtaBar({ lang }: { lang: Locale }) {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 flex border-t border-hairline bg-ink text-white sm:hidden">
       <Link
-        href={`/${lang}/contact`}
+        href={`/${lang}#contact`}
         className="flex-1 py-3.5 text-center text-sm font-medium active:bg-cobalt"
       >
         {t.cta.workWithUs}

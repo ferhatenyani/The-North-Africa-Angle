@@ -85,7 +85,7 @@ export default async function ArticlePage({
         variant="cobalt"
         title={t.home.closing.title}
         body={t.home.closing.body}
-        primary={{ href: `/${lang}/contact`, label: t.cta.workWithUs }}
+        primary={{ href: `/${lang}#contact`, label: t.cta.workWithUs }}
         secondary={{ href: site.substack, label: t.cta.readOnSubstack, external: true }}
       />
     </>

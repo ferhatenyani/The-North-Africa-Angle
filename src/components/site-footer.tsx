@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { getDict, locales, swapLocale, type Locale } from "@/lib/i18n";
 import { site } from "@/lib/site";
-import { IconLinkedIn, IconInstagram, IconMail, IconSubstack, IconWhatsApp, IconXSocial } from "./icons";
+import { IconLinkedIn, IconInstagram, IconSubstack, IconWhatsApp, IconXSocial } from "./icons";
 
 export function SiteFooter({ lang }: { lang: Locale }) {
   const t = getDict(lang);
@@ -13,7 +13,7 @@ export function SiteFooter({ lang }: { lang: Locale }) {
     { href: `/${lang}/services`, label: t.nav.services },
     { href: `/${lang}/expertise`, label: t.nav.expertise },
     { href: `/${lang}/insights`, label: t.nav.insights },
-    { href: `/${lang}/contact`, label: t.nav.contact },
+    { href: `/${lang}#contact`, label: t.nav.contact },
   ];
 
   const socials = [
@@ -150,6 +150,3 @@ export function SiteFooter({ lang }: { lang: Locale }) {
     </footer>
   );
 }
-
-/* Mail icon kept for the contact page. */
-export { IconMail };

@@ -118,7 +118,7 @@ export default async function ExpertisePage({ params }: { params: Promise<{ lang
         variant="cobalt"
         title={t.contact.experts.title}
         body={t.contact.experts.body}
-        primary={{ href: `/${lang}/contact`, label: t.cta.getInTouch }}
+        primary={{ href: `/${lang}#contact`, label: t.cta.getInTouch }}
       />
     </>
   );

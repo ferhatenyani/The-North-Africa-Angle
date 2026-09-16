@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono, IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
 import { notFound } from "next/navigation";
 
+import { HashScroll } from "@/components/hash-scroll";
 import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -74,6 +75,7 @@ export default async function LangLayout({
           {t.cta.skipToContent}
         </a>
         <SiteHeader lang={lang as Locale} />
+        <HashScroll />
         <main id="main">{children}</main>
         <div aria-hidden className="h-[3.6rem] sm:hidden" />
         <SiteFooter lang={lang as Locale} />

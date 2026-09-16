@@ -310,12 +310,6 @@ export const en = {
       title: "Are you a specialist on North Africa?",
       body: "Are you a researcher, analyst or subject-matter specialist with strong knowledge of North Africa? We are building a network of experts who can contribute to research assignments and short-term projects on an as-needed basis.",
     },
-    direct: {
-      kicker: "Direct",
-      emailLabel: "Email",
-      whatsappLabel: "WhatsApp",
-      substackLabel: "Substack",
-    },
   },
   forms: {
     title: "Send us a message",

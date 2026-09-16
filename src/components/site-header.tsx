@@ -18,7 +18,7 @@ export function SiteHeader({ lang }: { lang: Locale }) {
     { href: `/${lang}/services`, label: t.nav.services },
     { href: `/${lang}/expertise`, label: t.nav.expertise },
     { href: `/${lang}/insights`, label: t.nav.insights },
-    { href: `/${lang}/contact`, label: t.nav.contact },
+    { href: `/${lang}#contact`, label: t.nav.contact },
   ];
 
   function isActive(href: string): boolean {

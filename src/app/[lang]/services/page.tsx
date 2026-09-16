@@ -70,7 +70,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ lang:
         kicker={t.services.tailored.kicker}
         title={t.services.tailored.title}
         body={t.services.tailored.body}
-        primary={{ href: `/${lang}/contact`, label: t.cta.discussProject }}
+        primary={{ href: `/${lang}#contact`, label: t.cta.discussProject }}
       />
     </>
   );

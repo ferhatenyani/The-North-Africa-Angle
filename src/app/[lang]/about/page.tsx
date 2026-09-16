@@ -92,7 +92,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: Lo
       <CtaBand
         variant="cobalt"
         title={t.home.closing.tagline}
-        primary={{ href: `/${lang}/contact`, label: t.cta.workWithUs }}
+        primary={{ href: `/${lang}#contact`, label: t.cta.workWithUs }}
         secondary={{ href: `/${lang}/services`, label: t.cta.ourServices }}
       />
     </>
