@@ -229,7 +229,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
               href={site.substack}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-cobalt underline-offset-4 hover:underline"
+              className="inline-flex items-center gap-2 border border-ink/25 px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
             >
               {t.cta.subscribe}
               <IconArrowRight />
