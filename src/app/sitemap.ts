@@ -4,7 +4,7 @@ import { sortedArticles } from "@/lib/articles";
 import { locales } from "@/lib/i18n";
 import { site } from "@/lib/site";
 
-const PAGES = ["", "/about", "/services", "/expertise", "/insights"] as const;
+const PAGES = ["", "/about", "/services", "/expertise", "/insights", "/experts"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

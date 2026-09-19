@@ -13,6 +13,7 @@ export function SiteFooter({ lang }: { lang: Locale }) {
     { href: `/${lang}/services`, label: t.nav.services },
     { href: `/${lang}/expertise`, label: t.nav.expertise },
     { href: `/${lang}/insights`, label: t.nav.insights },
+    { href: `/${lang}/experts`, label: t.nav.experts },
     { href: `/${lang}#contact`, label: t.nav.contact },
   ];
 

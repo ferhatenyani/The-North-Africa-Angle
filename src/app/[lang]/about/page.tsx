@@ -89,6 +89,23 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: Lo
         </div>
       </section>
 
+      {/* Team — human anchor; target of the home page "Meet the team" link */}
+      <section id="team" className="scroll-mt-16 border-t border-hairline bg-surface">
+        <div className="container-page max-w-3xl py-16">
+          <p className="kicker text-cobalt">{t.about.team.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">
+            {t.about.team.title}
+          </h2>
+          <div className="mt-6 border-l-2 border-cobalt pl-6">
+            {t.about.team.paras.map((para) => (
+              <p key={para.slice(0, 24)} className="mt-4 text-[15px] leading-relaxed text-ink-muted first:mt-0">
+                {para}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         variant="cobalt"
         title={t.home.closing.tagline}

@@ -12,6 +12,7 @@ export const fr: Dict = {
     services: "Services",
     expertise: "Expertise",
     insights: "Analyses",
+    experts: "Réseau d'experts",
     contact: "Contact",
   },
   cta: {
@@ -33,19 +34,32 @@ export const fr: Dict = {
       title: "Intelligence politique, stratégique et de marché sur l'Afrique du Nord",
       body: "The North Africa Angle aide les organisations à comprendre les dynamiques politiques, économiques et sociales qui façonnent l'Afrique du Nord — et ce qu'elles impliquent pour l'action publique, l'investissement, les partenariats et la prise de décision.",
     },
-    intro: {
-      kicker: "Notre lecture de la région",
-      title: "Comprendre l'Afrique du Nord au-delà des gros titres",
-      paras: [
-        "L'Afrique du Nord change rapidement.",
-        "Évolutions politiques, transformations économiques, migration, énergie, géopolitique régionale, numérique et recomposition des partenariats internationaux redessinent la région et sa relation avec l'Europe, l'Afrique et le reste du monde.",
-        "Comprendre ces évolutions demande plus que suivre l'actualité. Cela exige une connaissance locale, un contexte politique et une capacité à relier des dynamiques trop souvent analysées séparément.",
-        "The North Africa Angle fournit recherche et intelligence pour aider les organisations à comprendre ce qui se passe, pourquoi c'est important et ce qui peut suivre.",
-      ],
-    },
     services: {
       kicker: "Ce que nous faisons",
       title: "Six lignes de service, une seule question : la vôtre",
+      lead: "Chaque mission part d'une question. Nous ne vendons pas de rapports génériques.",
+    },
+    why: {
+      kicker: "Pourquoi NAA",
+      title: "Pourquoi les organisations travaillent avec nous",
+      items: [
+        {
+          title: "Connaissance du terrain",
+          desc: "Basés en Algérie, nous suivons la région de l'intérieur — sa politique, ses institutions, ses réseaux — et non à distance.",
+        },
+        {
+          title: "Réseau régional",
+          desc: "Un réseau souple de chercheurs et de spécialistes en Algérie et dans le Maghreb élargi, mobilisé autour de chaque mission.",
+        },
+        {
+          title: "Recherche multilingue",
+          desc: "Nous travaillons en arabe, en français et en anglais — sources, entretiens et terrain — sans rien perdre entre les trois.",
+        },
+        {
+          title: "Analyse indépendante",
+          desc: "Nous distinguons les faits de l'interprétation et disons ce que les sources soutiennent. Sans agenda, sans rapport générique.",
+        },
+      ],
     },
     regions: {
       kicker: "Notre ancrage régional",
@@ -55,16 +69,39 @@ export const fr: Dict = {
       note: "Nous combinons analyse régionale et expertise par pays, en travaillant avec des chercheurs, des analystes et des spécialistes dans toute l'Afrique du Nord.",
       linkLabel: "Voir notre expertise",
     },
+    weekly: {
+      kicker: "Weekly Update",
+      title: "The North Africa Angle Weekly Update",
+      short: "L'essentiel de la semaine en Afrique du Nord, en une lecture concise.",
+      body: "Un aperçu concis des développements politiques, économiques et sécuritaires les plus significatifs de la semaine en Afrique du Nord et dans la région élargie.",
+    },
+    work: {
+      kicker: "Travailler avec nous",
+      title: "Deux activités, une même exigence de rigueur",
+      insights: {
+        label: "NAA Insights",
+        title: "Analyses indépendantes, publiées au grand jour",
+        body: "Nos recherches en accès libre — analyses, couverture de la région et Weekly Update. C'est notre manière de réfléchir en public, et le meilleur moyen de juger la qualité de notre travail avant de nous confier une mission.",
+        cta: "Lire nos analyses",
+      },
+      intelligence: {
+        label: "NAA Intelligence",
+        title: "Recherche sur mesure, en mandat",
+        body: "Des missions confidentielles construites autour de votre question : intelligence politique, cartographie d'acteurs, recherche terrain et appui à l'entrée de marché, livrées sous forme de briefings et de notes exploitables.",
+        cta: "Discuter d'un projet",
+      },
+    },
+    aboutTeaser: {
+      kicker: "Qui sommes-nous",
+      title: "Un petit cabinet, résolument régional",
+      body: "The North Africa Angle est un cabinet indépendant de recherche et de conseil consacré à l'Afrique du Nord, animé par des chercheurs basés dans la région et adossé à un réseau d'intervenants sélectionnés.",
+      linkLabel: "Rencontrer l'équipe",
+    },
     closing: {
       kicker: "De l'information à la compréhension",
       title: "Une approche construite autour de la question à résoudre",
       body: "Note stratégique politique, cartographie d'acteurs, recherche terrain en Algérie, évaluation d'entrée sur un marché ou étude régionale élargie : nous construisons notre approche autour de la question à laquelle il faut répondre.",
       tagline: "Analyse claire. Connaissance locale. Intelligence utile.",
-    },
-    weekly: {
-      kicker: "Weekly Update",
-      title: "The North Africa Angle Weekly Update",
-      body: "Un aperçu concis des développements politiques, économiques et sécuritaires les plus significatifs de la semaine en Afrique du Nord et dans la région élargie.",
     },
   },
   about: {
@@ -110,101 +147,117 @@ export const fr: Dict = {
         "Notre travail combine la profondeur de la recherche et les besoins concrets des organisations qui opèrent en Afrique du Nord ou qui s'y engagent.",
       ],
     },
+    team: {
+      kicker: "L'équipe",
+      title: "Les visages de NAA",
+      // PENDING (client) : ajouter le nom du fondateur, une photo et une courte bio lorsqu'ils seront fournis.
+      paras: [
+        "NAA est porté par des chercheurs basés en Algérie, avec des spécialistes par pays et par thème mobilisés dans toute la région pour chaque mission.",
+        "Nous restons volontairement petits : chaque mandat est dirigé par l'équipe centrale, complétée par les expertises de notre réseau lorsque la question l'exige.",
+      ],
+    },
   },
   services: {
     hero: {
-      kicker: "Services",
+      kicker: "NAA Intelligence",
       title: "Recherche, intelligence et conseil sur l'Afrique du Nord",
       body: "The North Africa Angle fournit des prestations de recherche et d'intelligence sur mesure pour les organisations qui travaillent sur, dans ou avec l'Afrique du Nord.",
     },
     items: [
       {
         title: "Intelligence politique & politiques publiques",
-        intro: "Nous suivons et analysons les développements politiques et les politiques publiques en Afrique du Nord.",
+        intro:
+          "Nous suivons les développements politiques et les politiques publiques en Afrique du Nord et les transformons en intelligence exploitable — de la veille hebdomadaire aux briefings à la demande et à l'analyse de scénarios.",
         bullets: [
-          "Veille politique",
-          "Notes pays",
-          "Analyse des politiques publiques",
+          "Veille politique (hebdomadaire ou à la demande)",
+          "Notes pays et institutionnelles",
+          "Analyse des politiques publiques et législatives",
           "Évaluation des risques politiques",
-          "Briefings exécutifs",
+          "Analyse de scénarios",
           "Cartographie politique et institutionnelle",
-          "Suivi des évolutions émergentes",
+          "Briefings exécutifs",
+          "Veille d'alerte sur les évolutions émergentes",
         ],
         for: "Pour les cabinets de conseil, les entreprises, les organisations internationales, les ONG, les médias et les institutions de recherche.",
       },
       {
         title: "Recherche & analyse",
-        intro: "Nous menons des recherches qualitatives et documentaires sur les questions politiques, économiques et sociales de la région.",
+        intro:
+          "Nous concevons et menons des recherches qualitatives sur la région — documentaires ou terrain — et les livrons sous forme de notes de politique publique, de rapports thématiques et d'études pays pensés pour la décision.",
         bullets: [
-          "Recherche documentaire",
+          "Recherche documentaire et revue de sources (arabe, français, anglais)",
           "Recherche terrain",
-          "Entretiens",
+          "Entretiens semi-directifs",
           "Consultations d'acteurs",
           "Notes de politique publique",
-          "Rapports thématiques",
+          "Rapports thématiques et pays",
           "Analyse politico-économique",
           "Études comparatives par pays",
         ],
-        for: null,
+        for: "Pour les think tanks, les fondations, les organisations internationales et les médias qui enquêtent sur la région.",
       },
       {
         title: "Intelligence des parties prenantes",
-        intro: "Savoir qui compte est souvent aussi important que savoir ce qui se passe. Nous cartographions les acteurs et institutions pertinents, leurs rôles, leurs intérêts, leurs relations et leur influence potentielle.",
+        intro:
+          "Nous cartographions les institutions et les acteurs qui comptent pour votre question — leurs rôles, leurs intérêts, leurs relations et leur influence — pour savoir qui mobiliser, dans quel ordre et comment.",
         bullets: [
-          "Institutions gouvernementales",
-          "Agences publiques",
-          "Entreprises",
-          "Organisations de la société civile",
-          "Organisations internationales",
+          "Cartographie institutionnelle et politique",
+          "Analyse des influences et des intérêts",
+          "Institutions gouvernementales et agences publiques",
+          "Entreprises et associations professionnelles",
+          "Société civile et syndicats",
+          "Organisations internationales et bailleurs",
           "Experts et universitaires",
-          "Associations professionnelles",
-          "Acteurs politiques et sociaux",
+          "Séquencement de l'engagement et points d'entrée",
         ],
-        for: null,
+        for: "Pour les organisations qui s'implantent dans un espace politique, construisent des partenariats ou mènent du plaidoyer dans la région.",
       },
       {
         title: "Entrée de marché & environnement politique",
-        intro: "S'impliquer sur un nouveau marché demande plus qu'une étude commerciale. Nous aidons les organisations à comprendre l'environnement politique, réglementaire et institutionnel de leurs activités.",
+        intro:
+          "Avant de vous engager sur un marché, nous évaluons l'environnement politique, réglementaire et institutionnel qui l'entoure — et le traduisons en implications concrètes pour votre stratégie d'entrée.",
         bullets: [
           "Panoramas pays et secteurs",
           "Analyse politique et réglementaire",
           "Intelligence de marché",
           "Cartographie des parties prenantes",
-          "Identification des risques",
-          "Recherche locale",
+          "Identification des risques et options d'atténuation",
+          "Vérification locale de l'information commerciale",
           "Briefings exécutifs",
-          "Appui à l'entrée de marché",
+          "Appui à l'entrée de marché et suivi post-implantation",
         ],
-        for: null,
+        for: "Pour les entreprises et investisseurs qui entrent ou se développent en Algérie et dans le Maghreb élargi.",
       },
       {
         title: "Recherche terrain & expertise locale",
-        intro: "Pour les organisations internationales menant des recherches en Afrique du Nord, NAA peut jouer le rôle de partenaire local de recherche et de connaissance. Nous pouvons intervenir sur :",
+        intro:
+          "Nous sommes votre partenaire local de recherche en Afrique du Nord : nous menons entretiens et terrain, identifions les bons acteurs et experts locaux, et contextualisons les résultats sur place.",
         bullets: [
-          "Entretiens",
+          "Programmes d'entretiens (arabe, français, anglais)",
           "Focus groups",
-          "Recherche terrain",
+          "Recherche terrain et visites de site",
           "Identification d'acteurs locaux",
           "Traduction et contextualisation",
-          "Coordination de recherche",
+          "Coordination et logistique de recherche",
           "Mobilisation d'experts locaux",
           "Analyse par pays",
         ],
-        for: null,
+        for: "Pour les organisations internationales, les fondations et les cabinets d'études menant des recherches dans la région.",
       },
       {
         title: "Intelligence de l'information & des médias",
-        intro: "Les environnements informationnels nord-africains évoluent rapidement. Nous étudions :",
+        intro:
+          "Nous étudions comment l'information est produite, circulée et contestée en Afrique du Nord — des paysages médiatiques et sphères publiques numériques aux narrations en ligne et à leurs usages politiques.",
         bullets: [
-          "Paysages médiatiques",
-          "Écosystèmes d'information",
-          "Intégrité de l'information",
-          "Sphères publiques numériques",
-          "Narrations en ligne",
+          "Cartographie des paysages médiatiques",
+          "Analyse des écosystèmes d'information",
+          "Évaluations d'intégrité de l'information",
+          "Sphères publiques numériques et narrations en ligne",
+          "Analyse des narrations et de la désinformation",
           "Médias et communication politique",
           "Tendances numériques et sociaux",
         ],
-        for: null,
+        for: "Pour les médias, les bailleurs et les organisations qui travaillent sur l'intégrité de l'information et le débat public.",
       },
     ],
     tailored: {
@@ -256,7 +309,7 @@ export const fr: Dict = {
   },
   insights: {
     hero: {
-      kicker: "Analyses",
+      kicker: "NAA Insights",
       title: "Analyses et perspectives sur l'Afrique du Nord",
       body: "The North Africa Angle publie des analyses et des perspectives indépendantes sur les développements politiques, économiques et sociaux qui façonnent l'Afrique du Nord. Notre regard dépasse l'événement pour explorer les tendances, les acteurs et les dynamiques qui le sous-tendent.",
     },
@@ -280,7 +333,7 @@ export const fr: Dict = {
     },
     featured: {
       kicker: "Analyses à la une",
-      title: "Recherches et commentaires récents",
+      title: "Dernières recherches et analyses",
     },
   },
   contact: {
@@ -306,6 +359,42 @@ export const fr: Dict = {
       kicker: "Appels à experts",
       title: "Vous êtes spécialiste de l'Afrique du Nord ?",
       body: "Vous êtes chercheur, analyste ou spécialiste avec une bonne connaissance de l'Afrique du Nord ? Nous construisons un réseau d'experts pouvant contribuer à des missions de recherche et à des projets de courte durée, selon les besoins.",
+      ctaLabel: "Rejoindre le réseau d'experts de NAA",
+    },
+  },
+  expertNetwork: {
+    hero: {
+      kicker: "Réseau d'experts",
+      title: "Rejoindre le réseau d'experts de NAA",
+      body: "NAA travaille avec des chercheurs, des analystes et des spécialistes de toute l'Afrique du Nord sur des missions de recherche rémunérées, de courte durée. Si vous connaissez profondément la région, nous aimerions vous connaître.",
+    },
+    who: {
+      kicker: "Profils recherchés",
+      title: "Les expertises autour desquelles nous construisons le réseau",
+      items: [
+        "Spécialistes par pays — Algérie, Maroc, Tunisie, Libye, Mauritanie",
+        "Experts thématiques — économie politique, énergie, migration, médias, sécurité",
+        "Enquêteurs terrain, interviewers et fixers (arabe, français, anglais)",
+        "Anciens responsables publics, journalistes et praticiens connaissant les institutions",
+      ],
+    },
+    how: {
+      kicker: "Comment ça marche",
+      title: "De la candidature à la mission",
+      steps: [
+        {
+          title: "Candidater",
+          desc: "Envoyez-nous votre profil : expertise par pays et par thème, langues de travail, travaux passés.",
+        },
+        {
+          title: "Être mobilisé",
+          desc: "Quand une mission correspond à votre profil, nous vous contactons avec un brief précis, un périmètre défini et un taux.",
+        },
+        {
+          title: "Intervenir",
+          desc: "Vous contribuez de manière ponctuelle et rémunérée — entretiens, terrain, analyse ou relecture — avec mention de votre contribution lorsque le client l'accepte.",
+        },
+      ],
     },
   },
   forms: {
@@ -326,7 +415,7 @@ export const fr: Dict = {
       "Autre / je ne sais pas encore",
     ],
     timeframe: "Échéance prévue",
-    message: "Votre projet",
+    message: "Dites-nous ce que vous devez comprendre",
     messagePlaceholder: "La question à laquelle vous cherchez à répondre, le contexte, votre besoin…",
     optional: "facultatif",
     requiredMark: "*",
@@ -338,6 +427,29 @@ export const fr: Dict = {
     errorForm: "Une erreur est survenue. Réessayez dans quelques instants.",
     errorConfig: "Le formulaire n'est pas encore configuré. Contactez-nous par e-mail ou sur WhatsApp.",
     responseNote: "Nous répondons sous un jour ouvré — souvent bien plus vite.",
+  },
+  expertForm: {
+    title: "Candidater au réseau",
+    intro: "Deux minutes à remplir — nous répondons à chaque candidature.",
+    name: "Nom complet",
+    email: "E-mail",
+    based: "Basé(e) à (ville, pays)",
+    expertise: "Expertise pays / thématique",
+    languages: "Langues de travail",
+    link: "Lien de profil (LinkedIn, academia, portfolio)",
+    message: "Parlez-nous brièvement de votre expertise",
+    messagePlaceholder: "Votre parcours, vos travaux sur la région, votre disponibilité…",
+    optional: "facultatif",
+    requiredMark: "*",
+    send: "Envoyer la candidature",
+    sending: "Envoi en cours…",
+    sentTitle: "Candidature envoyée",
+    sentBody:
+      "Merci — nous étudions chaque candidature et revenons vers vous dès qu'une mission correspond à votre profil.",
+    sendAnother: "Envoyer une autre candidature",
+    errorForm: "Une erreur est survenue. Réessayez dans quelques instants.",
+    errorConfig: "Le formulaire n'est pas encore configuré. Contactez-nous par e-mail.",
+    responseNote: "Nous gardons les candidatures en fichier et revenons vers vous dès qu'une mission correspond.",
   },
   article: {
     analysis: "Analyse",

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArticleCard } from "@/components/article-card";
 import { ContactForm } from "@/components/contact-form";
 import { CountryMap } from "@/components/country-map";
-import { CtaBand } from "@/components/cta-band";
 import { IconArrowRight, IconWhatsApp } from "@/components/icons";
 import { PlaceImage } from "@/components/place-image";
 import { formatDate, sortedArticles } from "@/lib/articles";
@@ -16,11 +15,6 @@ const COUNTRY_SLOTS = ["country-dz", "country-ma", "country-tn", "country-ly", "
 const HOME_WA_MESSAGE: Record<Locale, string> = {
   en: "Hello, I'd like to discuss a project on North Africa.",
   fr: "Bonjour, je souhaite discuter d'un projet sur l'Afrique du Nord.",
-};
-
-const EXPERT_WA_MESSAGE: Record<Locale, string> = {
-  en: "Hello, I am a researcher / analyst specialised in North Africa and interested in joining the NAA expert network.",
-  fr: "Bonjour, je suis chercheur / analyste spécialiste de l'Afrique du Nord et je souhaite rejoindre le réseau d'experts de NAA.",
 };
 
 export default async function HomePage({ params }: { params: Promise<{ lang: Locale }> }) {
@@ -72,78 +66,65 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
         </div>
       </section>
 
-      {/* Intro — beyond the headlines */}
-      <section className="section-rule mt-12 sm:mt-16">
-        <div className="container-page grid gap-8 py-12 sm:py-16 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div>
-            <p className="kicker text-cobalt">{t.home.intro.kicker}</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight tracking-tight text-ink">
-              {t.home.intro.title}
-            </h2>
-          </div>
-          <div>
-            <p className="font-serif text-xl leading-relaxed text-ink">{t.home.intro.paras[0]}</p>
-            {t.home.intro.paras.slice(1).map((para) => (
-              <p key={para.slice(0, 24)} className="mt-5 text-[15px] leading-relaxed text-ink-muted">
-                {para}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What we do — swipeable on mobile, index rows on desktop */}
+      {/* What we do — one DOM list: snap carousel on mobile, numbered index on desktop.
+          Placed first so a visitor gets "what NAA does" in seconds. */}
       <section className="border-y border-hairline bg-surface">
         <div className="container-page py-12 sm:py-16">
           <p className="kicker text-cobalt">{t.home.services.kicker}</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-semibold tracking-tight text-ink">
             {t.home.services.title}
           </h2>
+          <p className="mt-4 max-w-2xl font-serif text-lg leading-relaxed text-ink">
+            {t.home.services.lead}
+          </p>
 
-          {/* Mobile: snap carousel */}
-          <div className="snap-row mt-8 lg:hidden">
+          <ul className="snap-row mt-8 pb-1 lg:mt-10 lg:block lg:border-t lg:border-hairline lg:pb-0">
             {t.services.items.map((service, i) => (
-              <Link
+              <li
                 key={service.title}
-                href={`/${lang}/services`}
-                className="flex w-[270px] flex-col border border-hairline bg-white p-5"
+                className="w-[270px] border border-hairline bg-white lg:w-auto lg:border-0 lg:bg-transparent"
               >
-                <span className="font-mono text-sm text-cobalt">{String(i + 1).padStart(2, "0")}</span>
-                <span className="mt-3 font-display text-lg font-semibold leading-snug tracking-tight text-ink">
-                  {service.title}
-                </span>
-                <span className="mt-2 line-clamp-3 text-sm leading-relaxed text-ink-muted">
-                  {service.intro}
-                </span>
-                <IconArrowRight className="mt-4 text-cobalt" />
-              </Link>
+                <Link
+                  href={`/${lang}/services`}
+                  className="group flex h-full flex-col p-5 lg:grid lg:grid-cols-[3.5rem_1fr_1.5rem] lg:items-baseline lg:gap-x-4 lg:gap-y-1 lg:border-b lg:border-hairline lg:p-0 lg:px-4 lg:py-5 lg:transition-colors lg:hover:bg-white"
+                >
+                  <span className="font-mono text-sm text-cobalt">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="mt-3 font-display text-lg font-semibold leading-snug tracking-tight text-ink lg:mt-0 lg:text-base">
+                    {service.title}
+                  </span>
+                  <IconArrowRight className="mt-4 shrink-0 text-cobalt lg:mt-0 lg:h-4 lg:w-4 lg:self-center lg:justify-self-end lg:text-ink-muted lg:transition-transform lg:group-hover:translate-x-1" />
+                  <span className="mt-2 text-sm leading-relaxed text-ink-muted lg:col-span-2 lg:col-start-2 lg:mt-0">
+                    {service.intro.split(". ")[0]}.
+                  </span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
+        </div>
+      </section>
 
-          {/* Desktop: numbered index */}
-          <div className="mt-10 hidden border-t border-hairline lg:block">
-            {t.services.items.map((service, i) => (
-              <Link
-                key={service.title}
-                href={`/${lang}/services`}
-                className="group grid grid-cols-[3.5rem_1fr_1.5rem] items-baseline gap-x-4 gap-y-1 border-b border-hairline py-5 transition-colors hover:bg-white sm:px-4"
-              >
-                <span className="font-mono text-sm text-cobalt">{String(i + 1).padStart(2, "0")}</span>
-                <span className="font-display text-base font-semibold tracking-tight text-ink">
-                  {service.title}
-                </span>
-                <IconArrowRight className="h-4 w-4 self-center justify-self-end text-ink-muted transition-transform group-hover:translate-x-1" />
-                <span className="col-span-2 col-start-2 text-sm leading-relaxed text-ink-muted">
-                  {service.intro.split(". ")[0]}.
-                </span>
-              </Link>
+      {/* Why NAA — four short reasons, right after what we do */}
+      <section>
+        <div className="container-page py-12 sm:py-16">
+          <p className="kicker text-cobalt">{t.home.why.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">
+            {t.home.why.title}
+          </h2>
+          <div className="mt-10 grid gap-8 border-t border-hairline pt-8 sm:grid-cols-2 lg:grid-cols-4">
+            {t.home.why.items.map((item) => (
+              <div key={item.title}>
+                <h3 className="font-display text-base font-semibold tracking-tight text-ink">
+                  {item.title}
+                </h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Regional focus — map + country cards with images */}
-      <section>
+      {/* Where we work — map + country cards with images */}
+      <section className="border-y border-hairline bg-surface">
         <div className="container-page py-12 sm:py-16">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
@@ -201,17 +182,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
         </div>
       </section>
 
-      {/* Weekly update — subscriptions happen on Substack (external) */}
-      <CtaBand
-        variant="cobalt"
-        kicker={t.home.weekly.kicker}
-        title={t.home.weekly.title}
-        body={t.home.weekly.body}
-        primary={{ href: site.substack, label: t.cta.subscribe, external: true }}
-        secondary={{ href: `/${lang}/insights`, label: t.cta.exploreInsights }}
-      />
-
-      {/* Featured analysis — thumbnails, swipeable on mobile */}
+      {/* Latest analysis — one DOM list: snap carousel on mobile, grid on desktop.
+          The newsletter lives on as a quiet strip below it, not a full band. */}
       <section>
         <div className="container-page py-12 sm:py-16">
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -222,22 +194,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
               </h2>
             </div>
             <Link
-              href={site.substack}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/${lang}/insights`}
               className="inline-flex items-center gap-2 text-sm font-medium text-cobalt underline-offset-4 hover:underline"
             >
-              {t.cta.readOnSubstack}
+              {t.nav.insights}
               <IconArrowRight />
             </Link>
           </div>
 
-          {/* Mobile: snap carousel */}
-          <div className="snap-row mt-8 md:hidden">
+          <ul className="snap-row mt-8 pb-1 md:mt-10 md:grid md:grid-cols-3 md:gap-6 md:pb-0">
             {latest.map((article) => {
               const a = article.locales[lang];
               return (
-                <div key={article.slug} className="w-[290px]">
+                <li key={article.slug} className="w-[290px] md:w-auto">
                   <ArticleCard
                     href={`/${lang}/insights/${article.slug}`}
                     kicker={`${t.article.analysis} / ${a.region}`}
@@ -246,43 +215,96 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
                     meta={`${formatDate(article.date, lang)} · ${article.readMinutes} ${t.article.minRead}`}
                     image={articleImages[article.slug]}
                   />
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
 
-          {/* Desktop: grid */}
-          <div className="mt-10 hidden gap-6 md:grid md:grid-cols-3">
-            {latest.map((article) => {
-              const a = article.locales[lang];
-              return (
-                <ArticleCard
-                  key={article.slug}
-                  href={`/${lang}/insights/${article.slug}`}
-                  kicker={`${t.article.analysis} / ${a.region}`}
-                  title={a.title}
-                  dek={a.dek}
-                  meta={`${formatDate(article.date, lang)} · ${article.readMinutes} ${t.article.minRead}`}
-                  image={articleImages[article.slug]}
-                />
-              );
-            })}
+          <div className="mt-12 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-t border-hairline pt-6">
+            <p className="max-w-xl text-sm leading-relaxed text-ink-muted">
+              <span className="kicker mr-3 text-cobalt">{t.home.weekly.kicker}</span>
+              {t.home.weekly.short}
+            </p>
+            <a
+              href={site.substack}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-cobalt underline-offset-4 hover:underline"
+            >
+              {t.cta.subscribe}
+              <IconArrowRight />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Closing */}
-      <CtaBand
-        kicker={t.home.closing.kicker}
-        title={t.home.closing.title}
-        body={t.home.closing.body}
-        primary={{ href: `/${lang}#contact`, label: t.cta.workWithUs }}
-      />
-      <section className="bg-surface">
-        <div className="container-page py-10">
-          <p className="text-center font-mono text-xs uppercase tracking-[0.2em] text-ink-muted">
-            {t.home.closing.tagline}
-          </p>
+      {/* Work with us — the two NAA activities side by side.
+          NAA Intelligence (paid mandates) gets the dark, dominant card;
+          NAA Insights (free publication) stays secondary on purpose. */}
+      <section className="border-t border-hairline bg-surface">
+        <div className="container-page py-12 sm:py-16">
+          <p className="kicker text-cobalt">{t.home.work.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">
+            {t.home.work.title}
+          </h2>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <div className="flex flex-col border border-hairline bg-white p-6 sm:p-8">
+              <p className="kicker text-cobalt">{t.home.work.insights.label}</p>
+              <h3 className="mt-3 font-display text-xl font-semibold tracking-tight text-ink">
+                {t.home.work.insights.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                {t.home.work.insights.body}
+              </p>
+              <Link
+                href={`/${lang}/insights`}
+                className="mt-6 inline-flex items-center gap-2 self-start border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+              >
+                {t.home.work.insights.cta}
+                <IconArrowRight />
+              </Link>
+            </div>
+            <div className="flex flex-col bg-ink p-6 text-white sm:p-8">
+              <p className="kicker text-white/50">{t.home.work.intelligence.label}</p>
+              <h3 className="mt-3 font-display text-xl font-semibold tracking-tight">
+                {t.home.work.intelligence.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
+                {t.home.work.intelligence.body}
+              </p>
+              <Link
+                href={`/${lang}#contact`}
+                className="mt-6 inline-flex items-center gap-2 self-start bg-cobalt px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-cobalt-dark"
+              >
+                {t.home.work.intelligence.cta}
+                <IconArrowRight />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who we are — short human anchor near the bottom, links to the team on /about */}
+      <section className="border-t border-hairline">
+        <div className="container-page grid gap-6 py-12 sm:py-16 lg:grid-cols-[minmax(0,8fr)_minmax(0,4fr)] lg:items-end">
+          <div>
+            <p className="kicker text-cobalt">{t.home.aboutTeaser.kicker}</p>
+            <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+              {t.home.aboutTeaser.title}
+            </h2>
+            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-muted">
+              {t.home.aboutTeaser.body}
+            </p>
+          </div>
+          <div className="lg:justify-self-end">
+            <Link
+              href={`/${lang}/about#team`}
+              className="inline-flex items-center gap-2 border border-ink/25 px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+            >
+              {t.home.aboutTeaser.linkLabel}
+              <IconArrowRight />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -299,11 +321,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
             <p className="mt-4 font-serif text-xl leading-snug text-ink">{t.contact.hero.lead}</p>
             {site.whatsapp ? (
               <a
-                href={waLink(
-                  lang === "fr"
-                    ? "Bonjour, je souhaite discuter d'un projet sur l'Afrique du Nord."
-                    : "Hello, I'd like to discuss a project on North Africa.",
-                )}
+                href={homeWa}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2.5 bg-whatsapp px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-whatsapp-dark"
@@ -333,24 +351,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Loc
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t.contact.project.note}</p>
             </div>
 
-            {/* Expert enquiries */}
+            {/* Expert enquiries — dedicated page with the application form */}
             <div className="mt-10 border-t-2 border-ink pt-8">
               <p className="kicker text-cobalt">{t.contact.experts.kicker}</p>
               <h3 className="mt-2 font-display text-xl font-semibold tracking-tight text-ink">
                 {t.contact.experts.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">{t.contact.experts.body}</p>
-              {site.whatsapp ? (
-                <a
-                  href={waLink(EXPERT_WA_MESSAGE[lang])}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-2 border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
-                >
-                  <IconWhatsApp width="18" height="18" className="text-whatsapp" />
-                  {t.cta.getInTouch}
-                </a>
-              ) : null}
+              <Link
+                href={`/${lang}/experts`}
+                className="mt-5 inline-flex items-center gap-2 border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+              >
+                {t.contact.experts.ctaLabel}
+                <IconArrowRight />
+              </Link>
             </div>
           </div>
           <ContactForm t={t.forms} waHref={homeWa} />

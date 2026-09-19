@@ -9,9 +9,20 @@ pnpm dev        # http://localhost:3000
 pnpm build && pnpm start
 ```
 
+## Deployment (Vercel)
+
+The site deploys on **Vercel** with zero config: Next.js 16 is auto-detected and pnpm is picked
+up from the `packageManager` field. `middleware.ts` (locale redirect) and the `next.config.ts`
+redirects work as-is — there is no Netlify config anymore.
+
+1. Push this repo to GitHub/GitLab, then import it in Vercel ("Add New → Project").
+2. Add the environment variables below in **Project → Settings → Environment Variables**
+   (they are `NEXT_PUBLIC_*`, i.e. inlined at build time — set them **before** the first build).
+3. Deploy. Set `NEXT_PUBLIC_SITE_URL` to the final domain once it is attached.
+
 ## Environment variables
 
-Copy `.env.example` to `.env.local` and fill in:
+Copy `.env.example` to `.env.local` for local dev; on Vercel use project settings:
 
 | Variable | Purpose |
 |---|---|
@@ -76,7 +87,8 @@ including `sitemap.xml` and `robots.txt`.
 
 ## Pending from the client (see PLAN.md §7)
 
-1. WhatsApp number → `.env.local`
-2. Professional mailbox → Web3Forms key → `.env.local`
+1. WhatsApp number → `.env.local` / Vercel env vars
+2. Professional mailbox → Web3Forms key → `.env.local` / Vercel env vars
 3. FR copy proofread (drafted from the EN source in the Architecture doc)
-4. Domain + deployment (works out of the box on Vercel/Netlify; set `NEXT_PUBLIC_SITE_URL` after)
+4. Founder name + photo/bio for the team section (`about.team` in the dictionaries; PENDING comment marks the spot)
+5. Domain → attach in Vercel, then set `NEXT_PUBLIC_SITE_URL`
